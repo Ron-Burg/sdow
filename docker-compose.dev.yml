@@ -1,0 +1,12 @@
+version: "3"
+services:
+
+  web:
+    build:
+      context: ./website/
+      dockerfile: Dockerfile.dev
+    image: sdow-web:dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./website/src:/usr/src/app/src

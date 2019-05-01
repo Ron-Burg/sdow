@@ -1,0 +1,10 @@
+version: "3"
+services:
+
+  web:
+    build:
+      context: ./website/
+      dockerfile: Dockerfile.prod
+    image: sdow-web
+    ports:
+      - "80:80"
