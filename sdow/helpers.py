@@ -6,7 +6,7 @@ import logging
 import requests
 
 
-WIKIPEDIA_API_URL = 'https://en.wikipedia.org/w/api.php'
+WIKIPEDIA_API_URL = 'https://he.wikipedia.org/w/api.php'
 
 
 def fetch_wikipedia_pages_info(page_ids, database):
@@ -70,7 +70,7 @@ def fetch_wikipedia_pages_info(page_ids, database):
         page_title = database.fetch_page_title(page_id)
         pages_info[page_id] = {
             'title': page_title,
-            'url': 'https://en.wikipedia.org/wiki/{0}'.format(page_title)
+            'url': 'https://he.wikipedia.org/wiki/{0}'.format(page_title)
         }
       else:
         pages_info[page_id] = {

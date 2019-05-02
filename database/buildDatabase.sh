@@ -8,7 +8,7 @@ export LC_ALL=C
 # By default, the latest Wikipedia dump will be downloaded. If a download date in the format
 # YYYYMMDD is provided as the first argument, it will be used instead.
 if [[ $# -eq 0 ]]; then
-  DOWNLOAD_DATE=$(wget -q -O- https://dumps.wikimedia.your.org/enwiki/ | grep -Po '\d{8}' | sort | tail -n1)
+  DOWNLOAD_DATE=$(wget -q -O- https://dumps.wikimedia.your.org/hewiki/ | grep -Po '\d{8}' | sort | tail -n1)
 else
   if [ ${#1} -ne 8 ]; then
     echo "[ERROR] Invalid download date provided: $1"
@@ -21,13 +21,13 @@ fi
 ROOT_DIR=`pwd`
 OUT_DIR="dump"
 
-DOWNLOAD_URL="https://dumps.wikimedia.your.org/enwiki/$DOWNLOAD_DATE"
-TORRENT_URL="https://tools.wmflabs.org/dump-torrents/enwiki/$DOWNLOAD_DATE"
+DOWNLOAD_URL="https://dumps.wikimedia.your.org/hewiki/$DOWNLOAD_DATE"
+TORRENT_URL="https://tools.wmflabs.org/dump-torrents/hewiki/$DOWNLOAD_DATE"
 
-SHA1SUM_FILENAME="enwiki-$DOWNLOAD_DATE-sha1sums.txt"
-REDIRECTS_FILENAME="enwiki-$DOWNLOAD_DATE-redirect.sql.gz"
-PAGES_FILENAME="enwiki-$DOWNLOAD_DATE-page.sql.gz"
-LINKS_FILENAME="enwiki-$DOWNLOAD_DATE-pagelinks.sql.gz"
+SHA1SUM_FILENAME="hewiki-$DOWNLOAD_DATE-sha1sums.txt"
+REDIRECTS_FILENAME="hewiki-$DOWNLOAD_DATE-redirect.sql.gz"
+PAGES_FILENAME="hewiki-$DOWNLOAD_DATE-page.sql.gz"
+LINKS_FILENAME="hewiki-$DOWNLOAD_DATE-pagelinks.sql.gz"
 
 
 # Make the output directory if it doesn't already exist and move to it
