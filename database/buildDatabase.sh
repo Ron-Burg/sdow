@@ -274,5 +274,16 @@ else
 fi
 
 
+##############################
+#  CREATE SEARCHES DATABASE  #
+##############################
+if [ ! -f searches.sqlite ]; then
+  echo
+  echo "[INFO] Creating Searches database"
+  sqlite3 searches.sqlite ".read $ROOT_DIR/createSearchesTable.sql"
+else
+  echo "[WARN] Already created Searches database"
+fi
+
 echo
 echo "[INFO] All done!"

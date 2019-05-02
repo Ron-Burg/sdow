@@ -1,0 +1,9 @@
+version: "3"
+services:
+
+  datagen:
+    build:
+      context: ./database/
+    image: sdow-datagen
+    volumes:
+      - ./data:/app/dump
