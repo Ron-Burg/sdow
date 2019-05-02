@@ -7,7 +7,6 @@ from __future__ import print_function
 import os
 import time
 import logging
-import google.cloud.logging
 
 from sets import Set
 from flask_cors import CORS
@@ -37,8 +36,6 @@ def load_app(environment='dev'):
   # Initialize GCP logging (production only).
   if environment == 'prod':
     print('[INFO] Starting app in production mode with remote logging enabled...')
-    logging_client = google.cloud.logging.Client()
-    logging_client.setup_logging()
 
   return app
 
