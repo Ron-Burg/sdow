@@ -18,7 +18,7 @@ from helpers import InvalidRequest, fetch_wikipedia_pages_info
 
 
 # Connect to the SDOW database.
-database = Database(sdow_database='./sdow.sqlite', searches_database='./searches.sqlite')
+database = Database(sdow_database='data/sdow.sqlite', searches_database='data/searches.sqlite')
 
 # Initialize the Flask app.
 app = Flask(__name__)

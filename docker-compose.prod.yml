@@ -8,3 +8,12 @@ services:
     image: sdow-web
     ports:
       - "80:80"
+
+  database:
+    build:
+      context: ./sdow/
+    image: sdow-database
+    ports:
+      - "8888:5000"
+    volumes:
+      - ./data:/app/data

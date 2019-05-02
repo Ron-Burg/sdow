@@ -10,3 +10,12 @@ services:
       - "3000:3000"
     volumes:
       - ./website/src:/usr/src/app/src
+
+  database:
+    build:
+      context: ./sdow/
+    image: sdow-database:dev
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data

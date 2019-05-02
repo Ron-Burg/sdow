@@ -56,3 +56,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# sqlite data files
+data/
+
+# ignore website constants to avoid sharing the server IP
+website/src/resources/constants.js
