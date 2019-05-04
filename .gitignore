@@ -58,7 +58,8 @@ docs/_build/
 target/
 
 # sqlite data files
-data/
+data/*
+!data/.gitkeep
 
 # ignore website constants to avoid sharing the server IP
 website/src/resources/constants.js
